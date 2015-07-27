@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+	<div class="panel-header">
+		Woodson, Takuya
+	</div>
+
+	<div class="panel-body">
+		<ul class="list-group">
+		  <% @messages.each do |message| %>
+		  	<li class="list-group-item">
+		  		<div class="participant-name">
+		  			<%= "#{message.participant.fname} #{message.participant.lname}" %>
+		  		<div>
+		  		<div class="participant-message">
+		  			<%= message.content %>
+		  		</div>
+		  	</li>
+		  <% end %>
+		</ul>
+	</div>
+	<div class="well" %>
+		<%= render 'message_form' %>
+	</div>
+</div>
+<%= link_to 'Edit', edit_conversation_path(@conversation) %> |
+<%= link_to 'Back', conversations_path %>
